@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name=”viewport” content=”width=device-width, initial-scale=1, maximum-scale=1″>
+    <title></title>
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <link href="https://cdn.bootcss.com/jquery-mobile/1.4.5/jquery.mobile.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/semantic-ui/2.2.13/semantic.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet">
+    <script type="text/javascript">
+    $(document).bind("mobileinit", function(){
+      $.mobile.defaultPageTtransition = 'slide';
+    })
+    </script>
+    <script src="https://cdn.bootcss.com/semantic-ui/2.2.13/semantic.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery-mobile/1.4.1/jquery.mobile.js"></script>
+    <style media="screen">
+      *{padding: 0;margin:0;border: 0}
+      .page{margin:0!important}
+      h2{color:#000!important}
+      .header{background: #222;height:50px;line-height: 50px;}
+      .float_right{float:right;margin-right: 30px;}
+    </style>
+    <script type="text/javascript">
+      $(function(){
+        $('#btn').click(function(){
+          $('.segment').dimmer('show');
+          $('#hide_page').show('100');
+        });
+        $('#hide_page').click(function(event){
+          event.stopPropagation();
+        })
+        $('#seg').click(function(){
+          $('#hide_page').hide('100');
+        })
+      })
+    </script>
+  </head>
+  <body>
+    <div data-role='page' id="page">
+      <div data-role='header' data-theme='b' class="header">
+        <div class="right float_right">
+          <button type="button" id="btn" class="ui button green" name="button">登录</button>
+          <a href="#page2"　><button type="button" class="ui button blue" name="button" >注册</button></a>
+        </div>
+      </div>
+      <div class="ui page dimmer segment" id="seg" style="margin:0">
+        <div class="content container col-sm-7 col-md-5 col-lg-4" style="height:500px;display:none" id="hide_page">
+          <div class="center" style="background:#fff;padding:0 30px;height:500px;">
+            <form class="form" action="" method="post">
+              <h2>会员登录</h2>
+              <input type="text" placeholder="邮箱/用户名" name="" value="">
+              <input type="text" placeholder="密码" name="" value="">
+              <button type="button" class="ui button green" name="button">登录</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div data-role='page' id="page2">
+      <div date-role='main' class="container col-sm-6">
+        <div class="row col-sm-6">
+          <a href="#page"　class="row col-sm-3"><button type="button" name="button" class="ui button inverted red">返回</button></a>
+        </div>
+        <div class="container">
+          <div class="" style="padding:15px 25px;">
+            <span>您可以选择以下第三方帐号直接登录代码笔记，一分钟完成注册</span>
+          </div>
+          <div class="container col-sm-6">
+            <button type="button" class="ui button inverted orange" name="button" style="margin-bottom:15px;">微博帐号注册</button>
+            <button type="button" class="ui button inverted purple" name="button">QQ帐号注册</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
